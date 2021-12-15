@@ -17,9 +17,9 @@ void callChef() {
     if (missionaries_supply < pot_capacity) {
         pot.release(missionaries_supply);
         missionaries_supply = 0;
-        std::cout << "The pot ran out of meat. One of the savages asked the cook to cook more.\n";
+        std::cout << "The pot ran out of meat. One of the savages asked the chef to cook more.\n";
     } else {
-        std::cout << "The pot ran out of meat. One of the savages asked the cook to cook more.\n";
+        std::cout << "The pot ran out of meat. One of the savages asked the chef to cook more.\n";
         pot.release(pot_capacity);
         missionaries_supply -= pot_capacity;
     }
@@ -112,6 +112,7 @@ int main(int argc, char *argv[]) {
         missionaries_supply = std::strtol(argv[4], nullptr, 10);
     }
 
+    std::cout << "Start of the program" << std::endl;
     if (!checkCorrectness()) {
         return 1;
     }
@@ -126,5 +127,7 @@ int main(int argc, char *argv[]) {
         savages[i].join();
     }
 
+    std::cout << "The program ended successfully" << std::endl;
+    std::cout << "Time: " << clock() / 1000.0 << std::endl;
     return 0;
 }
